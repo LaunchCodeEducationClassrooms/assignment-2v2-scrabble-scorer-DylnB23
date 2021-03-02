@@ -104,10 +104,10 @@ Enter 0, 1, or 2: `)
 }
 
 function transform(oldPointStructure) {
-   let newPointStructure = {};
-   
-   for (pointValue in oldPointStructure) {
-    for (let i = 0; i < oldPointStructure.length; i++) {
+  let newPointStructure = {};
+
+  for (pointValue in oldPointStructure) {
+    for (let i = 0; i < oldPointStructure[pointValue].length; i++) {
       newPointStructure[oldPointStructure[pointValue][i].toLowerCase()] = Number(pointValue);
     }
   }
@@ -115,9 +115,10 @@ function transform(oldPointStructure) {
 };
 
 let newPointStructure = transform(oldPointStructure)
-newPointStructure[''] = 0;
+
 
 function runProgram() {
+  
   initialPrompt();
   scorerPrompt();
 }
